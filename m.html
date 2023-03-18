@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task List</title>
+    <style>
+      .completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task List</h1>
+    <ul id="task-list">
+      <li><input type="checkbox" onchange="toggleTask(0)">Task 1</li>
+      <li><input type="checkbox" onchange="toggleTask(1)">Task 2</li>
+      <li><input type="checkbox" onchange="toggleTask(2)">Task 3</li>
+    </ul>
+    <script>
+      function toggleTask(index) {
+        var taskElement = document.getElementById("task-list").children[index];
+        if (taskElement.classList.contains("completed")) {
+          taskElement.classList.remove("completed");
+        } else {
+          taskElement.classList.add("completed");
+        }
+      }
+    </script>
+  </body>
+</html>
